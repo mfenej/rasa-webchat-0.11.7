@@ -103,9 +103,9 @@ const ConnectedWidget = forwardRef((props, ref) => {
     instanceSocket.current = store.socket;
   }
 
-  const storage =
-    props.params.storage === 'session' ? sessionStorage : localStorage;
-
+  const storage = props.params.storage === 'session' ? sessionStorage : localStorage;
+  storage.sessionName = props.sessionName;
+  
   if (!store) {
     store = initStore(
       props.inputTextFieldHint,
@@ -144,6 +144,7 @@ const ConnectedWidget = forwardRef((props, ref) => {
           fullScreenMode={props.fullScreenMode}
           badge={props.badge}
           embedded={props.embedded}
+          sessionName={props.sessionName}
           params={props.params}
           storage={storage}
           openLauncherImage={props.openLauncherImage}

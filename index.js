@@ -26,6 +26,7 @@ const plugin = {
         fullScreenMode={args.fullScreenMode}
         badge={args.badge}
         params={args.params}
+        sessionName={args.sessionName}
         embedded={args.embedded}
         openLauncherImage={args.openLauncherImage}
         closeImage={args.closeImage}
